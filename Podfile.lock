@@ -1,0 +1,33 @@
+PODS:
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - SWBaseRequest (1.0.0):
+    - YTKNetwork
+  - YTKNetwork (3.0.4):
+    - AFNetworking/NSURLSession (~> 4.0)
+
+DEPENDENCIES:
+  - SWBaseRequest (from `./`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - YTKNetwork
+
+EXTERNAL SOURCES:
+  SWBaseRequest:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  SWBaseRequest: 5019581c0738cd22f7b86a3a3fc7415929cf25ce
+  YTKNetwork: a096f80c18c7e7cc0e623a0fbea0a1bfd3f5bcf2
+
+PODFILE CHECKSUM: 24df88eccefd775ad0cd17a01eebee417a9bad7a
+
+COCOAPODS: 1.9.3

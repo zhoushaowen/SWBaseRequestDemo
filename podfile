@@ -1,0 +1,7 @@
+platform :ios, ‘9.0’
+
+target "SWBaseRequestDemo" do
+
+pod 'SWBaseRequest', path:'./'
+
+end
