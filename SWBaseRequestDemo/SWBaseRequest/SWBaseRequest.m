@@ -10,6 +10,22 @@
 
 @implementation SWBaseRequest
 
+- (YTKRequestMethod)requestMethod {
+    return YTKRequestMethodPOST;
+}
+
+- (YTKRequestSerializerType)requestSerializerType {
+    return YTKRequestSerializerTypeHTTP;
+}
+
+- (YTKResponseSerializerType)responseSerializerType {
+    return YTKResponseSerializerTypeJSON;
+}
+
+- (NSTimeInterval)requestTimeoutInterval {
+    return 30.0;
+}
+
 - (void)startRequestWithCompletionBlockWithSuccess:(SWRequestCompletionBlock)success failure:(SWRequestCompletionBlock)failure {
     [self startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [self handleSuccess:success responseObject:request.responseObject responseHeaders:request.responseHeaders];
