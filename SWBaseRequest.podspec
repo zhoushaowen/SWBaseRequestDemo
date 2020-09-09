@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "Zhoushaowen" => "348345883@qq.com" }
 
-  s.source       = { :git => "https://github.com/zhoushaowen/SWBaseRequest.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/zhoushaowen/SWBaseRequestDemo.git", :tag => s.version }
   
   s.source_files  = "SWBaseRequestDemo/SWBaseRequest/*.{h,m}"
   
