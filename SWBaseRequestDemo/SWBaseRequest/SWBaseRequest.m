@@ -7,8 +7,21 @@
 //
 
 #import "SWBaseRequest.h"
+#import <YTKNetwork.h>
+#import <AFURLResponseSerialization.h>
 
 @implementation SWBaseRequest
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        AFJSONResponseSerializer *jsonResponseSerializer = [[YTKNetworkAgent sharedAgent] valueForKey:@"jsonResponseSerializer"];
+        jsonResponseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain", nil];
+        jsonResponseSerializer.removesKeysWithNullValues = YES;
+    }
+    return self;
+}
 
 - (YTKRequestMethod)requestMethod {
     return YTKRequestMethodPOST;
@@ -37,6 +50,7 @@
 - (void)handleSuccess:(SWRequestCompletionBlock)success
        responseObject:(id)responseObject
       responseHeaders:(NSDictionary *)responseHeaders {
+    //example
     id formatObj = [self formatResponseObject:responseObject];
     if(success){
         success(0,nil,formatObj);
@@ -46,6 +60,7 @@
 - (void)handleFailure:(SWRequestCompletionBlock)failure
                 error:(NSError *)error
       responseHeaders:(NSDictionary *)responseHeaders {
+    //example
     if(failure){
         failure(1,error.localizedDescription,nil);
     }

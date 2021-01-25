@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SWBaseRequest.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    SWBaseRequest *req = [SWBaseRequest new];
+    [req startRequestWithCompletionBlockWithSuccess:^(SWBaseRequestStatus requestStatus, NSString * _Nullable message, id  _Nullable responseObject) {
+        
+    } failure:^(SWBaseRequestStatus requestStatus, NSString * _Nullable message, id  _Nullable responseObject) {
+        
+    }];
 }
 
 

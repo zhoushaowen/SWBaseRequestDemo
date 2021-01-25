@@ -10,11 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^SWRequestCompletionBlock)(NSInteger requestStatus, NSString *_Nullable message, id _Nullable responseObject);
+typedef NSInteger SWBaseRequestStatus;
+
+typedef void (^SWRequestCompletionBlock)(SWBaseRequestStatus requestStatus, NSString *_Nullable message, id _Nullable responseObject);
 
 @interface SWBaseRequest : YTKRequest
 
 - (void)startRequestWithCompletionBlockWithSuccess:(SWRequestCompletionBlock)success failure:(SWRequestCompletionBlock)failure;
+#pragma mark - Overrive
 - (void)handleSuccess:(SWRequestCompletionBlock)success
        responseObject:(id)responseObject
       responseHeaders:(NSDictionary *)responseHeaders;
